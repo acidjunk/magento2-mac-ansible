@@ -1,0 +1,24 @@
+
+upstream fastcgi_backend {
+   # use tcp connection
+   server  127.0.0.1:9000;
+   # or socket
+   #server   unix:/usr/local/var/run/php-fpm.sock;
+}
+server {
+    listen       80;
+    server_name  localhost;
+#    root         /var/www/shop;
+ 
+    access_log  /usr/local/var/log/nginx/default.access.log  main;
+
+
+
+
+    #location / {
+    #    include   /usr/local/etc/nginx/conf.d/php-fpm;
+    #}
+
+    set $MAGE_ROOT /var/www/shop;
+    include /usr/local/etc/nginx/conf.d/magento2;
+}
