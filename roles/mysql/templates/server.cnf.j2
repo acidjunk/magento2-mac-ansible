@@ -1,0 +1,26 @@
+# MYSQL
+# FILE: ~/.my.cnf.d/server.cnf
+
+
+# This group is read by the server. Use it for options that only affect the
+# server.
+#------------------------------------------------------------------------------#
+
+[server]
+
+[mysqld]
+
+# Logging
+general_log                         = 1
+general_log_file                    = /usr/local/var/log/mysql/mysql-errors.log
+
+# Query cache
+query_cache_type                    = 1
+query_cache_limit                   = 2M
+query_cache_size                    = 64M
+
+# InnoDB
+innodb_data_file_path               = ibdata1:512M;ibdata2:256M:autoextend
+innodb_autoextend_increment         = 128
+innodb_log_file_size                = 256M
+innodb_buffer_pool_size             = 2G

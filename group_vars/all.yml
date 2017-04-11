@@ -1,0 +1,18 @@
+---
+
+populate_with_sample_data:      yes
+
+# Application settings
+magento_path:                   "/var/www/shop"
+magento_mysql_host:             "magento2"
+magento_mysql_db:               "magento2"
+magento_mysql_user:             "magento2"
+magento_mysql_password:         "magento2"
+magento_mode:                   "develop"
+magento_version:                "community"
+
+php_user:                       acidjunk
+
+hostnames:
+  - "127.0.0.1"
+  - "0.0.0.0"
